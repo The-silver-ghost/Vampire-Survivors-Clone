@@ -14,3 +14,8 @@ config/name="vampiresurvivorsclone"
 run/main_scene="res://scenes/map1/map_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_render/layer_1="ground"
+2d_render/layer_2="objectsOnGround"
