@@ -1,14 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://cfu4abped56bi"]
 
+[ext_resource type="Script" path="res://scripts/map1/map_1.gd" id="1_0oh2w"]
 [ext_resource type="Texture2D" uid="uid://dkvu0vi8qchq2" path="res://assets/Slates [32x32px orthogonal tileset by Ivan Voirol].png" id="1_2y5t5"]
-
-[sub_resource type="GDScript" id="GDScript_7flhj"]
-script/source = "extends Node2D
-
-func _on_map_timer_timeout() -> void:
-	print(\"5 sec passed\")
-	get_tree().quit()
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnpbf"]
 texture = ExtResource("1_2y5t5")
@@ -7994,7 +7987,7 @@ sources/0 = SubResource("TileSetAtlasSource_yx57n")
 
 [node name="map1" type="Node2D"]
 texture_filter = 1
-script = SubResource("GDScript_7flhj")
+script = ExtResource("1_0oh2w")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -8008,7 +8001,14 @@ tile_map_data = PackedByteArray("AAAgABMAAAAaACsAAAAfABMAAAAZACsAAAAfABIAAAAZACo
 tile_set = SubResource("TileSet_6fhh2")
 
 [node name="mapTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 1800.0
 autostart = true
+
+[node name="timerLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 777.0
+offset_top = 242.0
+offset_right = 882.0
+offset_bottom = 301.0
 
 [connection signal="timeout" from="mapTimer" to="." method="_on_map_timer_timeout"]
