@@ -1,18 +1,28 @@
 extends Node2D
 
-func _process(_delta):
-	timer()
+var minute1 = 0
+var minute2 = 0
+var second1 = 0
+var second2 = 0
+
+
 
 func _on_map_timer_timeout() -> void:
-	get_tree().quit()
+	second2 += 1
 
-func roundDigits(num,digits):
-	return round(num*pow(10,digits))/pow(10,digits)
+func mapTime():
+	if second2 == 10:
+		second1 +=1
+		second2 = 0
+	elif second1 == 6:
+		minute2 += 1
+		second1 = 0
+	elif minute2 == 10:
+		minute1 += 1
+		minute2=0
+	elif minute1 == 3:
+		get_tree().quit()
 
-func timer():
-	var timerRounded = str(roundDigits($mapTimer.time_left/60,2))
-	var minutes = timerRounded.substr(0,2)
-	var seconds = timerRounded.substr(3,5)
-	var timeUnformatted = "%s:%s"
-	var timeFormat = timeUnformatted % [minutes,seconds]
-	$timerLabel.text = timeFormat
+func _process(_delta):
+	mapTime()
+	print(minute1,minute2,second1,second2)
