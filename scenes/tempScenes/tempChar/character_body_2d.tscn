@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://diour26omky64"]
+
+[ext_resource type="Script" path="res://scenes/tempScenes/tempChar/character_body_2d.gd" id="1_ddk5x"]
+[ext_resource type="Texture2D" uid="uid://bg01wmd2bii8j" path="res://assets/tempChar/Skeleton enemy.png" id="1_jkyde"]
+[ext_resource type="PackedScene" uid="uid://cnflx1tln8rtm" path="res://scenes/tempScenes/tempChar/camera_2d.tscn" id="3_0lfd8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bob65"]
+radius = 13.0
+height = 54.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljh8b"]
+atlas = ExtResource("1_jkyde")
+region = Rect2(0, 192, 63, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lixm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljh8b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ddk5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_bob65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.65005, 0.749023)
+sprite_frames = SubResource("SpriteFrames_3lixm")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_0lfd8")]

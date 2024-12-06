@@ -25,4 +25,3 @@ func mapTime():
 
 func _process(_delta):
 	mapTime()
-	print(minute1,minute2,second1,second2)
