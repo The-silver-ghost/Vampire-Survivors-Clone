@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name player
 
-func _process(delta):
+func _process(_delta):
 	movement()
 	coordinates()
 
