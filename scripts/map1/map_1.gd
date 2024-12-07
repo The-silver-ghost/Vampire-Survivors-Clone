@@ -5,7 +5,8 @@ var minute2 = 0
 var second1 = 0
 var second2 = 0
 
-
+func _process(_delta):
+	mapTime()
 
 func _on_map_timer_timeout() -> void:
 	second2 += 1
@@ -22,6 +23,3 @@ func mapTime():
 		minute2=0
 	elif minute1 == 3:
 		get_tree().quit()
-
-func _process(_delta):
-	mapTime()

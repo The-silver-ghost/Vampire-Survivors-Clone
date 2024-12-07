@@ -15,6 +15,10 @@ run/main_scene="res://scenes/map1/map_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerCoordinates="*res://scripts/globalScripts/player_coordinates.gd"
+
 [input]
 
 ui_left={

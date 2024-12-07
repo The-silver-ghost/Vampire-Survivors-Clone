@@ -3,7 +3,7 @@ class_name player
 
 func _process(delta):
 	movement()
-	print(velocity.y,velocity.x)
+	coordinates()
 
 func movement():
 	if Input.is_action_pressed("ui_up"):
@@ -19,3 +19,6 @@ func movement():
 		velocity.y = 0
 	
 	move_and_slide()
+
+func coordinates():
+	PlayerCoordinates.playerCoordinates = position
