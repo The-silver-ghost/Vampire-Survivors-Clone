@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci41vytpt6pb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wkr4"]
+size = Vector2(127, 544)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk42i"]
+size = Vector2(138, 540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kick"]
+size = Vector2(634.5, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8iin"]
+size = Vector2(637.75, 31)
+
+[node name="mapInfinite" type="Area2D"]
+collision_mask = 2
+
+[node name="LEFT" type="CollisionShape2D" parent="."]
+position = Vector2(-384, 0)
+shape = SubResource("RectangleShape2D_2wkr4")
+
+[node name="RIGHT" type="CollisionShape2D" parent="."]
+position = Vector2(384, 0)
+shape = SubResource("RectangleShape2D_wk42i")
+
+[node name="UP" type="CollisionShape2D" parent="."]
+position = Vector2(0, -224)
+shape = SubResource("RectangleShape2D_5kick")
+
+[node name="DOWN" type="CollisionShape2D" parent="."]
+position = Vector2(0, 224)
+shape = SubResource("RectangleShape2D_w8iin")
