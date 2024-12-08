@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci41vytpt6pb6"]
+[gd_scene load_steps=6 format=3 uid="uid://ci41vytpt6pb6"]
+
+[ext_resource type="Script" path="res://scripts/map1/map_infinite.gd" id="1_bmn38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wkr4"]
 size = Vector2(127, 544)
@@ -7,26 +9,34 @@ size = Vector2(127, 544)
 size = Vector2(138, 540)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kick"]
-size = Vector2(634.5, 59)
+size = Vector2(650.25, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8iin"]
 size = Vector2(637.75, 31)
 
-[node name="mapInfinite" type="Area2D"]
-collision_mask = 2
+[node name="mapInfinite" type="Node2D"]
+script = ExtResource("1_bmn38")
 
-[node name="LEFT" type="CollisionShape2D" parent="."]
+[node name="areaLeft" type="Area2D" parent="."]
+
+[node name="LEFT" type="CollisionShape2D" parent="areaLeft"]
 position = Vector2(-384, 0)
 shape = SubResource("RectangleShape2D_2wkr4")
 
-[node name="RIGHT" type="CollisionShape2D" parent="."]
+[node name="areaRight" type="Area2D" parent="."]
+
+[node name="RIGHT" type="CollisionShape2D" parent="areaRight"]
 position = Vector2(384, 0)
 shape = SubResource("RectangleShape2D_wk42i")
 
-[node name="UP" type="CollisionShape2D" parent="."]
+[node name="areaUp" type="Area2D" parent="."]
+
+[node name="UP" type="CollisionShape2D" parent="areaUp"]
 position = Vector2(0, -224)
 shape = SubResource("RectangleShape2D_5kick")
 
-[node name="DOWN" type="CollisionShape2D" parent="."]
+[node name="areaDown" type="Area2D" parent="."]
+
+[node name="DOWN" type="CollisionShape2D" parent="areaDown"]
 position = Vector2(0, 224)
 shape = SubResource("RectangleShape2D_w8iin")
