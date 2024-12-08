@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerCoordinates="*res://scripts/globalScripts/infiniteMap.gd"
+InfiniteMap="*res://scripts/globalScripts/infiniteMap.gd"
 
 [input]
 

@@ -1,18 +1,27 @@
-[gd_scene load_steps=20 format=4 uid="uid://cfu4abped56bi"]
+[gd_scene load_steps=29 format=4 uid="uid://cfu4abped56bi"]
 
 [ext_resource type="Script" path="res://scripts/map1/map_1.gd" id="1_0oh2w"]
 [ext_resource type="Texture2D" uid="uid://dkvu0vi8qchq2" path="res://assets/Slates [32x32px orthogonal tileset by Ivan Voirol].png" id="1_2y5t5"]
 [ext_resource type="PackedScene" uid="uid://diour26omky64" path="res://scenes/tempScenes/tempChar/character_body_2d.tscn" id="3_g1tnx"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/northwest.gd" id="4_tm42f"]
 [ext_resource type="PackedScene" uid="uid://bfi5ucam5g6d8" path="res://scenes/map1/tilesets/northwest.tscn" id="4_w7rml"]
 [ext_resource type="PackedScene" uid="uid://benf8mohht46s" path="res://scenes/map1/tilesets/northeast.tscn" id="5_y3dfh"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/northeast.gd" id="6_b3wf2"]
 [ext_resource type="PackedScene" uid="uid://df7lafrwvys82" path="res://scenes/map1/tilesets/north.tscn" id="6_u2o38"]
 [ext_resource type="PackedScene" uid="uid://dd65rmi6b5fnl" path="res://scenes/map1/tilesets/west.tscn" id="7_rhnay"]
 [ext_resource type="PackedScene" uid="uid://cy6fk5v56yv4r" path="res://scenes/map1/tilesets/southwest.tscn" id="8_ak55w"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/north.gd" id="8_xt11h"]
 [ext_resource type="PackedScene" uid="uid://dn1kqu5mnary7" path="res://scenes/map1/tilesets/south.tscn" id="9_f660n"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/west.gd" id="10_csqqh"]
 [ext_resource type="PackedScene" uid="uid://dwelo16xplayy" path="res://scenes/map1/tilesets/southeast.tscn" id="10_gvifh"]
 [ext_resource type="PackedScene" uid="uid://c6snyunkax1qo" path="res://scenes/map1/tilesets/east.tscn" id="11_koa57"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/southwest.gd" id="12_jbthb"]
 [ext_resource type="PackedScene" uid="uid://c61l1snc5l1ru" path="res://scenes/map1/tilesets/middle.tscn" id="12_tvjof"]
 [ext_resource type="PackedScene" uid="uid://ci41vytpt6pb6" path="res://scenes/map1/map_infinite.tscn" id="13_gwhx1"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/south.gd" id="14_ffhh6"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/southeast.gd" id="16_qj8kj"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/east.gd" id="18_qqv7p"]
+[ext_resource type="Script" path="res://scenes/map1/tilesets/middle.gd" id="20_t31qc"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_nn0sn"]
 tile_data = PackedInt32Array(262144, 5308416, 23, 327680, 5308416, 24, 393216, 5308416, 25, 458752, 5308416, 24, 524288, 5308416, 25, 589824, 5308416, 26, 196609, 4521984, 8, 262145, 4521984, 9, 327681, 4521984, 9, 393217, 4325376, 23, 458753, 3670016, 26, 524289, 3670016, 27, 589825, 5373952, 26, 131074, 4521984, 8, 196610, 4521984, 9, 262146, 4521984, 9, 327682, 4325376, 23, 393218, 4325376, 24, 458754, 3735552, 26, 524290, 3735552, 27, 589826, 5373952, 26, 3, 4194304, 16, 65539, 4194304, 17, 131075, 4521984, 9, 196611, 4521984, 9, 262147, 4325376, 23, 327683, 4325376, 24, 393219, 4194304, 25, 458755, 3866624, 22, 524291, 3735552, 21, 589827, 5373952, 26, 4, 4259840, 16, 65540, 4259840, 17, 131076, 4521984, 9, 196612, 4325376, 23, 262148, 4325376, 24, 327684, 4063232, 28, 393220, 4063232, 29, 458756, 3866624, 22, 524292, 3735552, 21, 589828, 5439488, 26, 5, 4587520, 8, 65541, 4587520, 9, 131077, 4587520, 19, 196613, 4390912, 23, 262149, 4390912, 24, 327685, 4128768, 28, 393221, 4128768, 29, 458757, 3866624, 22, 524293, 3735552, 21, 589829, 5373952, 26, 65542, 4587520, 8, 131078, 4587520, 9, 196614, 4587520, 9, 262150, 4390912, 23, 327686, 4390912, 24, 393222, 4259840, 25, 458758, 3866624, 22, 524294, 3735552, 21, 589830, 5439488, 26, 131079, 4587520, 8, 196615, 4587520, 9, 262151, 4587520, 9, 327687, 4390912, 23, 393223, 4390912, 24, 458759, 3932160, 26, 524295, 3932160, 27, 589831, 5373952, 26, 196616, 4587520, 8, 262152, 4587520, 9, 327688, 4587520, 9, 393224, 4390912, 23, 458760, 3997696, 26, 524296, 3997696, 27, 589832, 5439488, 26, 262153, 5505024, 23, 327689, 5505024, 24, 393225, 5505024, 25, 458761, 5505024, 24, 524297, 5505024, 25, 589833, 5505024, 26)
@@ -8022,30 +8031,39 @@ tile_set = SubResource("TileSet_0v8sr")
 
 [node name="northwest" parent="." instance=ExtResource("4_w7rml")]
 position = Vector2(192, 112)
+script = ExtResource("4_tm42f")
 
 [node name="northeast" parent="." instance=ExtResource("5_y3dfh")]
 position = Vector2(960, 112)
+script = ExtResource("6_b3wf2")
 
 [node name="north" parent="." instance=ExtResource("6_u2o38")]
 position = Vector2(576, 112)
+script = ExtResource("8_xt11h")
 
 [node name="west" parent="." instance=ExtResource("7_rhnay")]
 position = Vector2(192, 336)
+script = ExtResource("10_csqqh")
 
 [node name="southwest" parent="." instance=ExtResource("8_ak55w")]
 position = Vector2(192, 560)
+script = ExtResource("12_jbthb")
 
 [node name="south" parent="." instance=ExtResource("9_f660n")]
 position = Vector2(576, 560)
+script = ExtResource("14_ffhh6")
 
 [node name="southeast" parent="." instance=ExtResource("10_gvifh")]
 position = Vector2(960, 560)
+script = ExtResource("16_qj8kj")
 
 [node name="east" parent="." instance=ExtResource("11_koa57")]
 position = Vector2(960, 336)
+script = ExtResource("18_qqv7p")
 
 [node name="middle" parent="." instance=ExtResource("12_tvjof")]
 position = Vector2(576, 336)
+script = ExtResource("20_t31qc")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_g1tnx")]
 visibility_layer = 2
