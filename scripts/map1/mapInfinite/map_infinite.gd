@@ -1,7 +1,8 @@
 extends Node2D
 
 func _process(_delta):
-	positionUpdate()
+	#positionUpdate()
+	pass
 
 #enter area
 func _on_area_left_body_entered(body:CharacterBody2D):
@@ -48,6 +49,7 @@ func _on_area_down_body_exited(body: Node2D) -> void:
 	InfiniteMap.down = false
 	InfiniteMap.positionChange = false
 
-func positionUpdate():
+'''func positionUpdate():
 	if InfiniteMap.positionChange == true:
 		position = InfiniteMap.playerCoordinates
+'''

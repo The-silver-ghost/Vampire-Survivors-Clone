@@ -32,10 +32,10 @@ var positionChange = false
 func _process(_delta):
 	tilesetPosX()
 	tilesetPosY()
-	print(yAxis)
+	print(xAxis,yAxis)
 
 func tilesetPosX():
-	if xAxis == 3 or yAxis == -3:
+	if xAxis == 3 or xAxis == -3:
 		xAxis = 0
 	
 	if (right == true and xAxis == 1):
@@ -48,7 +48,7 @@ func tilesetPosX():
 		northX = northX + (576)
 		middleX = northX
 		southX = northX
-	elif (right == true and xAxis == 3) or (right == true and xAxis == 0):
+	elif (right == true and xAxis == 0):
 		#prev right, then middle, now left shifts right
 		northEastX = northEastX + (576)
 		eastX = northEastX
@@ -64,7 +64,7 @@ func tilesetPosX():
 		northX = northX - (576)
 		middleX = northX
 		southX = northX
-	elif (left == true and xAxis == -3) or (left == true and xAxis == 0):
+	elif (left == true and xAxis == 0):
 		#prev left, then middle, now right shifts left
 		northWestX = northWestX - (576)
 		westX = northWestX
@@ -82,7 +82,7 @@ func tilesetPosY():
 		westY = westY - 336
 		middleY = westY
 		eastY = westY
-	elif (up == true and yAxis == -3) or (up == true and yAxis == 0):
+	elif (up == true and yAxis == 0):
 		northWestY = northWestY - 336
 		northY = northWestY
 		northEastY = northWestY
@@ -95,7 +95,7 @@ func tilesetPosY():
 		westY = westY + 336
 		middleY = westY
 		eastY = westY
-	elif (down == true and yAxis == 3) or (down == true and yAxis == 0):
+	elif (down == true and yAxis == 0):
 		southWestY = southWestY + 336
 		southY = southWestY
 		southEastY = southWestY

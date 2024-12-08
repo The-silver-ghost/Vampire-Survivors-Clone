@@ -1,55 +1,63 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci41vytpt6pb6"]
+[gd_scene load_steps=8 format=3 uid="uid://ci41vytpt6pb6"]
 
-[ext_resource type="Script" path="res://scripts/map1/map_infinite.gd" id="1_bmn38"]
+[ext_resource type="Script" path="res://scripts/map1/mapInfinite/map_infinite.gd" id="1_bmn38"]
+[ext_resource type="Script" path="res://scripts/map1/mapInfinite/x_axis.gd" id="2_odvjg"]
+[ext_resource type="Script" path="res://scripts/map1/mapInfinite/y_axis.gd" id="3_mo3wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wkr4"]
-size = Vector2(6.5, 544)
+size = Vector2(0, 544)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk42i"]
-size = Vector2(7.5, 540)
+size = Vector2(0, 540)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kick"]
-size = Vector2(827, 5.75)
+size = Vector2(827, 0.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8iin"]
-size = Vector2(816, 6.75)
+size = Vector2(816, 0)
 
 [node name="mapInfinite" type="Node2D"]
 script = ExtResource("1_bmn38")
 
-[node name="areaLeft" type="Area2D" parent="."]
+[node name="x_axis" type="Node2D" parent="."]
+script = ExtResource("2_odvjg")
+
+[node name="areaLeft" type="Area2D" parent="x_axis"]
 collision_mask = 2
 
-[node name="LEFT" type="CollisionShape2D" parent="areaLeft"]
-position = Vector2(-384, 0)
+[node name="LEFT" type="CollisionShape2D" parent="x_axis/areaLeft"]
+position = Vector2(-390, 0)
 shape = SubResource("RectangleShape2D_2wkr4")
 
-[node name="areaRight" type="Area2D" parent="."]
+[node name="areaRight" type="Area2D" parent="x_axis"]
 collision_mask = 2
 
-[node name="RIGHT" type="CollisionShape2D" parent="areaRight"]
-position = Vector2(384, 0)
+[node name="RIGHT" type="CollisionShape2D" parent="x_axis/areaRight"]
+position = Vector2(390, 0)
 shape = SubResource("RectangleShape2D_wk42i")
 
-[node name="areaUp" type="Area2D" parent="."]
+[node name="y_axis" type="Node2D" parent="."]
+script = ExtResource("3_mo3wt")
+
+[node name="areaUp" type="Area2D" parent="y_axis"]
 collision_mask = 2
 
-[node name="UP" type="CollisionShape2D" parent="areaUp"]
-position = Vector2(0, -224)
+[node name="UP" type="CollisionShape2D" parent="y_axis/areaUp"]
+position = Vector2(0, -237)
 shape = SubResource("RectangleShape2D_5kick")
 
-[node name="areaDown" type="Area2D" parent="."]
+[node name="areaDown" type="Area2D" parent="y_axis"]
 collision_mask = 2
 
-[node name="DOWN" type="CollisionShape2D" parent="areaDown"]
-position = Vector2(0, 224)
+[node name="DOWN" type="CollisionShape2D" parent="y_axis/areaDown"]
+position = Vector2(0, 237)
 shape = SubResource("RectangleShape2D_w8iin")
 
-[connection signal="body_entered" from="areaLeft" to="." method="_on_area_left_body_entered"]
-[connection signal="body_exited" from="areaLeft" to="." method="_on_area_left_body_exited"]
-[connection signal="body_entered" from="areaRight" to="." method="_on_area_right_body_entered"]
-[connection signal="body_exited" from="areaRight" to="." method="_on_area_right_body_exited"]
-[connection signal="body_entered" from="areaUp" to="." method="_on_area_up_body_entered"]
-[connection signal="body_exited" from="areaUp" to="." method="_on_area_up_body_exited"]
-[connection signal="body_entered" from="areaDown" to="." method="_on_area_down_body_entered"]
-[connection signal="body_exited" from="areaDown" to="." method="_on_area_down_body_exited"]
+[connection signal="body_entered" from="x_axis/areaLeft" to="." method="_on_area_left_body_entered"]
+[connection signal="body_exited" from="x_axis/areaLeft" to="." method="_on_area_left_body_exited"]
+[connection signal="body_entered" from="x_axis/areaRight" to="." method="_on_area_right_body_entered"]
+[connection signal="body_exited" from="x_axis/areaRight" to="." method="_on_area_right_body_exited"]
+[connection signal="body_entered" from="y_axis/areaUp" to="." method="_on_area_up_body_entered"]
+[connection signal="body_exited" from="y_axis/areaUp" to="." method="_on_area_up_body_exited"]
+[connection signal="body_entered" from="y_axis/areaDown" to="." method="_on_area_down_body_entered"]
+[connection signal="body_exited" from="y_axis/areaDown" to="." method="_on_area_down_body_exited"]
