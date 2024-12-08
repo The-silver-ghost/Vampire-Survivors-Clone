@@ -3,6 +3,8 @@ extends Node
 var playerCoordinates : Vector2
 var xAxis = 0
 var yAxis = 0
+var up = false
+var down = false
 var right = false
 var left = false
 var positionChange = false
@@ -29,13 +31,12 @@ var positionChange = false
 
 func _process(_delta):
 	tilesetPosX()
-	print(xAxis)
+	tilesetPosY()
+	print(yAxis)
 
 func tilesetPosX():
-	if xAxis == 3:
+	if xAxis == 3 or yAxis == -3:
 		xAxis = 0
-	elif xAxis == -3:
-		xAxis == 0
 	
 	if (right == true and xAxis == 1):
 		#leftside shifts to right
@@ -68,3 +69,33 @@ func tilesetPosX():
 		northWestX = northWestX - (576)
 		westX = northWestX
 		southWestX = northWestX
+
+func tilesetPosY():
+	if yAxis == 3 or yAxis == -3:
+		yAxis = 0
+	
+	if (up == true and yAxis == -1):
+		southWestY = southWestY - 336
+		southY = southWestY
+		southEastY = southWestY
+	elif (up == true and yAxis == -2) or (up == true and yAxis == 1):
+		westY = westY - 336
+		middleY = westY
+		eastY = westY
+	elif (up == true and yAxis == -3) or (up == true and yAxis == 0):
+		northWestY = northWestY - 336
+		northY = northWestY
+		northEastY = northWestY
+	
+	if (down == true and yAxis == 1):
+		northWestY = northWestY + 336
+		northY = northWestY
+		northEastY = northWestY
+	elif (down == true and yAxis == 2) or (down == true and yAxis == -1):
+		westY = westY + 336
+		middleY = westY
+		eastY = westY
+	elif (down == true and yAxis == 3) or (down == true and yAxis == 0):
+		southWestY = southWestY + 336
+		southY = southWestY
+		southEastY = southWestY
