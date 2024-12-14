@@ -1,6 +1,6 @@
 extends Node
 
-var playerCoordinates : Vector2
+var playerCoordinates:Vector2
 var xAxis = 0
 var yAxis = 0
 var up = false
