@@ -21,4 +21,4 @@ func movement():
 	move_and_slide()
 
 func coordinates():
-	InfiniteMap.playerCoordinates = position
+	InfiniteMap.playerCoordinates = global_position

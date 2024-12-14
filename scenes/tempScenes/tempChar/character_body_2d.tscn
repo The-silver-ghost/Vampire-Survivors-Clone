@@ -36,3 +36,4 @@ scale = Vector2(0.65005, 0.749023)
 sprite_frames = SubResource("SpriteFrames_3lixm")
 
 [node name="Camera2D" parent="." instance=ExtResource("3_0lfd8")]
+zoom = Vector2(3.2, 3.2)
