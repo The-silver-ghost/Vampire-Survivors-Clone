@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfu4abped56bi"]
+[gd_scene load_steps=23 format=3 uid="uid://cfu4abped56bi"]
 
 [ext_resource type="Script" path="res://scripts/map1/map_1.gd" id="1_0oh2w"]
 [ext_resource type="PackedScene" uid="uid://diour26omky64" path="res://scenes/tempScenes/tempChar/character_body_2d.tscn" id="3_g1tnx"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scenes/map1/tilesets/southeast.gd" id="16_qj8kj"]
 [ext_resource type="Script" path="res://scenes/map1/tilesets/east.gd" id="18_qqv7p"]
 [ext_resource type="Script" path="res://scenes/map1/tilesets/middle.gd" id="20_t31qc"]
+[ext_resource type="PackedScene" uid="uid://c7a6ra5meu16w" path="res://scenes/enemy/enemy_bat.tscn" id="22_cddjy"]
 
 [node name="map1" type="Node2D"]
 texture_filter = 1
@@ -71,5 +72,8 @@ position = Vector2(576, 336)
 
 [node name="mapInfinite" parent="." instance=ExtResource("13_gwhx1")]
 position = Vector2(576, 336)
+
+[node name="enemyBat" parent="." instance=ExtResource("22_cddjy")]
+texture_filter = 1
 
 [connection signal="timeout" from="mapTimer" to="." method="_on_map_timer_timeout"]
