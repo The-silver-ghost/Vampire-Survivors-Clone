@@ -1,7 +1,7 @@
 class_name enemySpawner
 extends Node2D
 
-var maxSpawnCount = 5
+var maxSpawnCount = 2
 var enemyScene = preload("res://scenes/enemy/enemy_bat.tscn")
 var spawn = false
 var currentSpawnCount = 0

@@ -1,5 +1,5 @@
 class_name enemy
-extends Node2D
+extends CharacterBody2D
 
 var health = 5
 var speed = 50
@@ -9,6 +9,7 @@ var dmg = 1
 func movement():
 	global_position.x += (InfiniteMap.playerCoordinates.x - global_position.x)/speed
 	global_position.y += (InfiniteMap.playerCoordinates.y - global_position.y)/speed
+	move_and_slide()
 
 func takeDamage():
 	pass
