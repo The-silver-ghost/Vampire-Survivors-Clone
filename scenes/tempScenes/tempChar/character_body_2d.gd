@@ -7,13 +7,13 @@ func _process(_delta):
 
 func movement():
 	if Input.is_action_pressed("ui_up"):
-		velocity.y = -60
+		velocity.y = -100
 	elif Input.is_action_pressed("ui_down"):
-		velocity.y = 60
+		velocity.y = 100
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -60
+		velocity.x = -100
 	elif Input.is_action_pressed("ui_right"):
-		velocity.x = 60
+		velocity.x = 100
 	else:
 		velocity.x = 0
 		velocity.y = 0

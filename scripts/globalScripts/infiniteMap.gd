@@ -32,7 +32,6 @@ var positionChange = false
 func _process(_delta):
 	tilesetPosX()
 	tilesetPosY()
-	print(xAxis,yAxis)
 
 func tilesetPosX():
 	if xAxis == 3 or xAxis == -3:
