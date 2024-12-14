@@ -21,7 +21,7 @@
 [ext_resource type="Script" path="res://scenes/map1/tilesets/southeast.gd" id="16_qj8kj"]
 [ext_resource type="Script" path="res://scenes/map1/tilesets/east.gd" id="18_qqv7p"]
 [ext_resource type="Script" path="res://scenes/map1/tilesets/middle.gd" id="20_t31qc"]
-[ext_resource type="PackedScene" uid="uid://d3vvvsmrjbcuh" path="res://scenes/map1/node_2d.tscn" id="22_m1wxm"]
+[ext_resource type="PackedScene" uid="uid://d3vvvsmrjbcuh" path="res://scenes/map1/spawnNode.tscn" id="22_m1wxm"]
 
 [node name="map1" type="Node2D"]
 texture_filter = 1
