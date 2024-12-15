@@ -24,11 +24,14 @@ radius = 12.1655
 [node name="enemyBat" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 7
+motion_mode = 1
 script = ExtResource("1_6a87k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_wu518")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_bfhds")

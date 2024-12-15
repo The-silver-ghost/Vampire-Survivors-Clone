@@ -5,22 +5,22 @@
 [ext_resource type="Script" path="res://scripts/map1/tilesets/northwest.gd" id="4_tm42f"]
 [ext_resource type="PackedScene" uid="uid://bfi5ucam5g6d8" path="res://scenes/map1/tilesets/northwest.tscn" id="4_w7rml"]
 [ext_resource type="PackedScene" uid="uid://benf8mohht46s" path="res://scenes/map1/tilesets/northeast.tscn" id="5_y3dfh"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/northeast.gd" id="6_b3wf2"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/northeast.gd" id="6_b3wf2"]
 [ext_resource type="PackedScene" uid="uid://df7lafrwvys82" path="res://scenes/map1/tilesets/north.tscn" id="6_u2o38"]
 [ext_resource type="PackedScene" uid="uid://dd65rmi6b5fnl" path="res://scenes/map1/tilesets/west.tscn" id="7_rhnay"]
 [ext_resource type="PackedScene" uid="uid://cy6fk5v56yv4r" path="res://scenes/map1/tilesets/southwest.tscn" id="8_ak55w"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/north.gd" id="8_xt11h"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/north.gd" id="8_xt11h"]
 [ext_resource type="PackedScene" uid="uid://dn1kqu5mnary7" path="res://scenes/map1/tilesets/south.tscn" id="9_f660n"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/west.gd" id="10_csqqh"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/west.gd" id="10_csqqh"]
 [ext_resource type="PackedScene" uid="uid://dwelo16xplayy" path="res://scenes/map1/tilesets/southeast.tscn" id="10_gvifh"]
 [ext_resource type="PackedScene" uid="uid://c6snyunkax1qo" path="res://scenes/map1/tilesets/east.tscn" id="11_koa57"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/southwest.gd" id="12_jbthb"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/southwest.gd" id="12_jbthb"]
 [ext_resource type="PackedScene" uid="uid://c61l1snc5l1ru" path="res://scenes/map1/tilesets/middle.tscn" id="12_tvjof"]
 [ext_resource type="PackedScene" uid="uid://ci41vytpt6pb6" path="res://scenes/map1/map_infinite.tscn" id="13_gwhx1"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/south.gd" id="14_ffhh6"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/southeast.gd" id="16_qj8kj"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/east.gd" id="18_qqv7p"]
-[ext_resource type="Script" path="res://scenes/map1/tilesets/middle.gd" id="20_t31qc"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/south.gd" id="14_ffhh6"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/southeast.gd" id="16_qj8kj"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/east.gd" id="18_qqv7p"]
+[ext_resource type="Script" path="res://scripts/map1/tilesets/middle.gd" id="20_t31qc"]
 [ext_resource type="PackedScene" uid="uid://d3vvvsmrjbcuh" path="res://scenes/map1/spawnNode.tscn" id="22_m1wxm"]
 
 [node name="map1" type="Node2D"]
@@ -69,11 +69,10 @@ script = ExtResource("20_t31qc")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_g1tnx")]
 visibility_layer = 2
 position = Vector2(576, 336)
-collision_mask = 1
 
 [node name="mapInfinite" parent="." instance=ExtResource("13_gwhx1")]
 position = Vector2(576, 336)
 
-[node name="spawnNode" parent="." instance=ExtResource("22_m1wxm")]
+[node name="Node2D" parent="." instance=ExtResource("22_m1wxm")]
 
 [connection signal="timeout" from="mapTimer" to="." method="_on_map_timer_timeout"]

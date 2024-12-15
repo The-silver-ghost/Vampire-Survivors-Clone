@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxrowtk00p7gc"]
+
+[ext_resource type="Script" path="res://scripts/enemy/enemy_teleporter.gd" id="1_iwe2e"]
+[ext_resource type="Script" path="res://scenes/enemy/area_2d.gd" id="2_ub6tf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_812pr"]
+radius = 25.0
+height = 158.0
+
+[node name="enemyTeleporter" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_iwe2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-132, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_812pr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 5
+script = ExtResource("2_ub6tf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-219, -131, 197, -119, 197, 123, -196, 122, -196, -124, -240, -126, -239, 159, 224, 158, 224, -143, -183, -146)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]
