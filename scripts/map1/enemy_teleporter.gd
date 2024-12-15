@@ -1,8 +1,12 @@
+class_name enemyTeleporter
 extends Area2D
 
 var rng = RandomNumberGenerator.new()
 
 func _on_body_entered(body: CharacterBody2D) -> void:
+	randomCoordinates(body)
+
+func randomCoordinates(body):
 	var state = rng.randi_range(1,4)
 	if state == 1:
 		#up

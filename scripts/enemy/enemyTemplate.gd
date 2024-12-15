@@ -2,7 +2,7 @@ class_name enemy
 extends CharacterBody2D
 
 var health = 5
-var speed = 50
+var speed = 25
 var dmg = 1
 @onready var spriteDirection = $AnimatedSprite2D
 

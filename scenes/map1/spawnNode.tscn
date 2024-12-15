@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3vvvsmrjbcuh"]
+[gd_scene load_steps=6 format=3 uid="uid://d3vvvsmrjbcuh"]
 
 [ext_resource type="Script" path="res://scripts/map1/spawn_up.gd" id="2_sg07p"]
 [ext_resource type="Script" path="res://scripts/map1/spawn_down.gd" id="3_8heiq"]
 [ext_resource type="Script" path="res://scripts/map1/spawn_left.gd" id="4_vnk8x"]
 [ext_resource type="Script" path="res://scripts/map1/spawn_right.gd" id="5_6pfah"]
-[ext_resource type="Script" path="res://scripts/map1/enemy_teleporter.gd" id="5_vodwe"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_812pr"]
-radius = 25.0
-height = 158.0
+[ext_resource type="PackedScene" uid="uid://cxrowtk00p7gc" path="res://scenes/enemy/enemy_teleporter.tscn" id="5_cq37v"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,17 +30,9 @@ script = ExtResource("2_sg07p")
 wait_time = 2.0
 autostart = true
 
-[node name="enemyTeleporter" type="Area2D" parent="."]
-collision_mask = 4
-script = ExtResource("5_vodwe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyTeleporter"]
-position = Vector2(-132, 3)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_812pr")
+[node name="enemyTeleporter" parent="." instance=ExtResource("5_cq37v")]
 
 [connection signal="timeout" from="Node/spawnTimer" to="Node/spawnUp" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Node/spawnTimer" to="Node/spawnDown" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Node/spawnTimer" to="Node/spawnLeft" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Node/spawnTimer" to="Node/spawnRight" method="_on_spawn_timer_timeout"]
-[connection signal="body_entered" from="enemyTeleporter" to="enemyTeleporter" method="_on_body_entered"]
