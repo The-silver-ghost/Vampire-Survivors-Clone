@@ -69,7 +69,6 @@ script = ExtResource("20_t31qc")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_g1tnx")]
 visibility_layer = 2
 position = Vector2(576, 336)
-collision_mask = 1
 
 [node name="mapInfinite" parent="." instance=ExtResource("13_gwhx1")]
 position = Vector2(576, 336)
