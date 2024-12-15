@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxrowtk00p7gc"]
 
-[ext_resource type="Script" path="res://scripts/map1/enemy_teleporter.gd" id="1_iwe2e"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_teleporter.gd" id="1_iwe2e"]
 [ext_resource type="Script" path="res://scenes/enemy/area_2d.gd" id="2_ub6tf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_812pr"]
