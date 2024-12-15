@@ -73,6 +73,6 @@ position = Vector2(576, 336)
 [node name="mapInfinite" parent="." instance=ExtResource("13_gwhx1")]
 position = Vector2(576, 336)
 
-[node name="spawnNode" parent="." instance=ExtResource("22_m1wxm")]
+[node name="Node2D" parent="." instance=ExtResource("22_m1wxm")]
 
 [connection signal="timeout" from="mapTimer" to="." method="_on_map_timer_timeout"]

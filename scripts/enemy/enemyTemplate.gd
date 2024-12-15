@@ -22,8 +22,21 @@ func death():
 
 func animation():
 	if (InfiniteMap.playerCoordinates.x - global_position.x >= 0):
+		#facing right
 		spriteDirection.flip_h = true
+		velocity.x = speed
 	elif (InfiniteMap.playerCoordinates.x - global_position.x < 0):
+		#facing left
 		spriteDirection.flip_h = false
+		velocity.x = -speed
 	else:
 		spriteDirection.flip_h = false
+	
+	if (InfiniteMap.playerCoordinates.y - global_position.y >= 0):
+		#above player
+		velocity.y = speed
+	elif (InfiniteMap.playerCoordinates.y - global_position.y < 0):
+		#below player
+		velocity.y = -speed
+	
+	move_and_slide()

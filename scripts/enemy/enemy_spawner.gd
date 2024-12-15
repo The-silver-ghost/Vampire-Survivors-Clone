@@ -1,7 +1,7 @@
 class_name enemySpawner
 extends Node2D
 
-var maxSpawnCount = 2
+var maxSpawnCount = 4
 var currentEnemyScene = EnemyScenes.batScene
 var spawn = false
 var currentSpawnCount = 0
