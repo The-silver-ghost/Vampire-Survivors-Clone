@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://c7a6ra5meu16w" path="res://scenes/enemy/enemy_bat.tscn" id="2_uyr20"]
 
 [node name="enemyNode" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+motion_mode = 1
 script = ExtResource("1_pv48w")
 
 [node name="enemyBat" parent="." instance=ExtResource("2_uyr20")]

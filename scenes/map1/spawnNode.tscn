@@ -32,7 +32,7 @@ autostart = true
 
 [node name="enemyTeleporter" parent="." instance=ExtResource("5_cq37v")]
 
-[connection signal="timeout" from="Node/spawnTimer" to="Node/spawnUp" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Node/spawnTimer" to="Node/spawnDown" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Node/spawnTimer" to="Node/spawnLeft" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Node/spawnTimer" to="Node/spawnRight" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Node/spawnTimer" to="Node/spawnDown" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Node/spawnTimer" to="Node/spawnUp" method="_on_spawn_timer_timeout"]

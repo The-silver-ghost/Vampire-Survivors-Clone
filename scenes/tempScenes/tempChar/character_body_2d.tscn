@@ -24,6 +24,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_as_relative = false
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_ddk5x")
