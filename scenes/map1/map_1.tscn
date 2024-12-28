@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://d3vvvsmrjbcuh" path="res://scenes/map1/spawnNode.tscn" id="22_m1wxm"]
 
 [node name="map1" type="Node2D"]
+z_as_relative = false
 texture_filter = 1
 script = ExtResource("1_0oh2w")
 
@@ -66,13 +67,13 @@ script = ExtResource("18_qqv7p")
 position = Vector2(576, 336)
 script = ExtResource("20_t31qc")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_g1tnx")]
-visibility_layer = 2
-position = Vector2(576, 336)
-
 [node name="mapInfinite" parent="." instance=ExtResource("13_gwhx1")]
 position = Vector2(576, 336)
 
 [node name="Node2D" parent="." instance=ExtResource("22_m1wxm")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_g1tnx")]
+visibility_layer = 2
+position = Vector2(576, 336)
 
 [connection signal="timeout" from="mapTimer" to="." method="_on_map_timer_timeout"]

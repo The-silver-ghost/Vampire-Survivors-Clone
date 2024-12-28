@@ -1,4 +1,4 @@
 extends enemy
 
-func _process(_delta):
-	movement()
+func _process(delta):
+	movement(delta)
